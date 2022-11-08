@@ -1,6 +1,51 @@
-/*Centrar texto*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+:root {
+  --font-style: 'Nunito Sans', sans-serif;
+}
+/*Texto*/
 .centrar {
   text-align:center;
 }
 
+.izquierda{
+  text-align:left;
+}
 
+/*Colores*/
+.blanco{
+  color: aliceblue;
+}
+
+/*Barra de navegacion*/
+ul {
+  width: 300px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 25px;
+  border: 0.1px solid #099FFF;
+  background-color: #18181B;
+  box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li {
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+li:after {
+  display: flex;
+  content: '';
+  border-bottom: solid 1px #00FFFF;
+  padding-bottom: 1%;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+li:hover:after {
+  transform: scaleX(1);
+}
