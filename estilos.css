@@ -2,19 +2,15 @@
 :root {
   --font-style: 'Nunito Sans', sans-serif;
 }
+
 /*Texto*/
 .centrar {
   text-align:center;
 }
-
 .izquierda{
   text-align:left;
 }
 
-/*Colores*/
-.blanco{
-  color: aliceblue;
-}
 
 /*Barra de navegacion*/
 ul {
@@ -49,3 +45,5 @@ li:after {
 li:hover:after {
   transform: scaleX(1);
 }
+
+
