@@ -43,6 +43,7 @@
   .form-register a {
     color: white;
     text-decoration: none;
+    font-size: 15px;
   }
   
   .form-register a:hover {
