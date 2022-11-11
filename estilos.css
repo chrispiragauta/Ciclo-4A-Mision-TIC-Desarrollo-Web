@@ -3,9 +3,16 @@
   --font-style: 'Nunito Sans', sans-serif;
 }
 
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(images/456.jpg);
+}
 /*Texto*/
 .centrar {
   text-align:center;
+  color: aliceblue;
 }
 .izquierda{
   text-align:left;

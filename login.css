@@ -341,6 +341,16 @@ h1 {
   opacity: 1;
   transform: scale(1, 1);
 }
+.vinculo a {
+  color: black;
+  text-decoration: none;
+  text-decoration: underline;
+}
+.vinculo p {
+  line-height: 50px;
+  font-size: 16px;
+}
+
 @-webkit-keyframes eye-blink {
   to {
     height: 30px;
