@@ -5,7 +5,7 @@ $('#password').focusin(function(){
     $('form').removeClass('up')
   });
   
-  // Panda Eye move
+  // movimiento de ojos
   $(document).on( "mousemove", function( event ) {
     var dw = $(document).width() / 15;
     var dh = $(document).height() / 15;
@@ -17,9 +17,7 @@ $('#password').focusin(function(){
     });
   });
   
-  // validation
-  
-  
+  // validacion
   $('.btn').click(function(){
     $('form').addClass('wrong-entry');
       setTimeout(function(){ 

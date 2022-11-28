@@ -7,19 +7,11 @@
 body {
   margin: 0;
   padding: 0;
-  background: url(images/456.jpg);
-}
-/*Texto*/
-.centrar {
-  text-align:center;
-  color: aliceblue;
-}
-.izquierda{
-  text-align:left;
+  background: #053A3D;
+  text-align: center;
 }
 
-
-/*Barra de navegacion*/
+/*barra*/
 ul {
   width: 300px;
   height: 70px;
@@ -53,4 +45,318 @@ li:hover:after {
   transform: scaleX(1);
 }
 
+/*Titulo y subtitulo*/
+.titulo{
+  margin-top: 2%;
+  font-size: 50px;
+  font-family:Georgia;
+  color: burlywood;
+  display:inline-block;
+  position: relative; 
+}
+.titulo::after,.titulo::before{
+  content: '';
+  position:absolute;
+  width: 120px;
+  height: 3px;
+  background-color: currentColor;
+  top: 0.6em;
+}
+.titulo::before{
+  left: -140px;
+}
+.titulo::after{
+  right: -140px;
+}
+.subtitulo{
+  font-size: 30px;
+  font-family: Georgia;
+  margin-top: 2%;
+}
 
+
+/*Button*/
+.agregar *,
+        .agregar *:after,
+        .gregar *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+         :root {
+            --font-style: 'Nunito Sans', sans-serif;
+        }
+        
+        .agregar body {
+            font-family: var(--font-style);
+            width: 100%;
+            background: #053A3D;
+        }
+    
+        .agregar button {
+            display: inline-block;
+            position: relative;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 20px 30px;
+            background: #1A2929;
+        }
+        
+        .agregar span {
+            display: block;
+            padding: 25px 80px;
+        }
+        
+        .agregar button::before,
+        .agregar button::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            position: absolute;
+            transition: all 0.2s linear;
+            background: #54E6E7;
+        }
+        
+        .agregar span::before,
+        .agregar span::after {
+            content: "";
+            width: 2px;
+            height: 0;
+            position: absolute;
+            transition: all 0.2s linear;
+            background: #54E6E7;
+        }
+        
+        .agregar button:hover::before,
+        .agregar button:hover::after {
+            width: 100%;
+        }
+        
+        .agregar button:hover span::before,
+        .agregar button:hover span::after {
+            height: 100%;
+        }
+        
+        .agregar button::after {
+            right: 0;
+            bottom: 0;
+            transition-duration: 0.4s;
+        }
+        
+        .agregar button span::after {
+            right: 0;
+            bottom: 0;
+            transition-duration: 0.4s;
+        }
+        
+        .agregar button::before {
+            left: 0;
+            top: 0;
+            transition-duration: 0.4s;
+        }
+        
+        .agregar button span::before {
+            left: 0;
+            top: 0;
+            transition-duration: 0.4s;
+        }
+        .agregar a{
+          color: white;
+          text-decoration: none;
+          text-decoration: underline;
+          font-size: 19px;
+        }
+
+/*Galeria*/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap");
+.articles *{
+  box-sizing: border-box;
+  position: relative;
+  transition-duration: var(--duration);
+  transition-delay: var(--delay);
+  transition-timing-function: var(--easing);
+  justify-content: center;
+}
+
+.articles html {
+  --duration: 0.6s;
+  --easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --delay: 0s;
+}
+.articles body {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  width: 80vw;
+}
+.articles {
+  display: grid;
+  grid-gap: 1rem;
+  place-items: center;
+}
+.articles > header {
+  grid-column: 1/-1;
+}
+.articles:before { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(#000000, transparent);
+  transition: background-color 1s;
+}
+
+.articles article {
+  display: grid;
+  font-family: "Work Sans", sans-serif;
+  width: 100%;
+  --radius: 1rem;
+}
+.articles article:hover {
+  transform: translateY(-0.5rem);
+}
+.articles article:hover:before {
+  opacity: 1;
+}
+.articles article:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  border-radius: var(--radius);
+  transition: transform 0.3s;
+  transition-property: transform, opacity;
+}
+.articles article .image {
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition-property: transform, border-radius;
+  transform-origin: top left;
+}
+.articles article .image[data-flipping] {
+  border-radius: calc((var(--dw)) * var(--radius))/calc((var(--dh)) * var(--radius));
+}
+.articles article .image img {
+  display: block;
+  transition: inherit;
+  transform-origin: top left;
+}
+.articles article .image[data-flipping] {
+  transition: none;
+  transform: translate(calc(-1px * var(--dx)), calc(-1px * var(--dy))) scale(calc(1 / var(--dw)), calc(1 / var(--dh)));
+}
+.articles article .image[data-flipping] img {
+  transform: scale(calc(var(--dw)), calc(var(--dh)));
+}
+.articles article .content {
+  color: #aaa;
+  padding: 2rem;
+  z-index: 2;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: start;
+  grid-gap: 1rem 0rem;
+  grid-template-columns: auto auto;
+  width: 100%;
+}
+.articles article .content:before {
+  content: "";
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: inherit;
+  transform-origin: top left;
+  transition-property: transform, border-radius;
+}
+.articles article .content[data-flipping]:before {
+  transition: none;
+  transform: scale(calc(1 / var(--dw)), calc(1 / var(--dh)));
+  border-radius: calc((var(--dw)) * var(--radius))/calc((var(--dh)) * var(--radius));
+}
+.articles article h1 {
+  grid-column: 1/-1;
+  font-weight: 500;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000;
+}
+.articles article svg {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+}
+.toggle {
+  background: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  border: none;
+  padding: 0.5em;
+  width: 1em;
+  height: 1em;
+  font-size: 2rem;
+  cursor: pointer;
+
+ 
+}
+.toggle:hover {
+  opacity: 1;
+}
+.toggle svg {
+  width: 1em;
+  display: none;
+}
+[data-view=list] .toggle [data-view=list], [data-view=card] .toggle [data-view=card] {
+  display: block;
+  
+}
+
+[data-flip] {
+  transition-property: transform;
+}
+[data-flip][data-flipping] {
+  transition: none;
+  transform: translate(calc(-1px * var(--dx)), calc(-1px * var(--dy)));
+}
+
+.articles[data-view=card] {
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  max-width: 70vw;
+  --bg-color: #3730e9;
+}
+.articles[data-view=card] article {
+  grid-template-rows: 1fr auto;
+}
+.articles[data-view=card] article .image {
+  margin-bottom: -2rem;
+}
+
+.articles[data-view=list] {
+  --bg-color: #ffaa00;
+}
+.articles[data-view=list] article {
+  grid-template-columns: 40% 1fr;
+}
+.articles[data-view=list] article .image {
+  margin-right: -2rem;
+  height: 8em;
+  min-height: 100%;
+}
