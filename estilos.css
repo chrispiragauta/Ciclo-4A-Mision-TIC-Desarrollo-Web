@@ -193,6 +193,7 @@ li:hover:after {
   place-items: center;
   min-height: 100%;
   width: 80vw;
+  margin: 0 auto;
 }
 .articles {
   display: grid;
@@ -314,8 +315,7 @@ li:hover:after {
   height: 1em;
   font-size: 2rem;
   cursor: pointer;
-
- 
+  margin: 0 auto;
 }
 .toggle:hover {
   opacity: 1;
